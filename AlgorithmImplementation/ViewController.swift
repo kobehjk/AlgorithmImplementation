@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     let detail = DetailViewController()
     var interactiveTransition :KJInteractivityTransition?
@@ -30,9 +30,9 @@ class ViewController: UIViewController {
         self.printArray()
         
         
-        interactiveTransition = KJInteractivityTransition.init(gestureType: .pan, controlAnimationType: .Slider, viewController: self)
-        interactiveTransition?.pushViewController = detail
-        self.setKj_RightGesture(kj_rightGesture: false)
+//        interactiveTransition = KJInteractivityTransition.init(gestureType: .pan, controlAnimationType: .Slider, viewController: self)
+//        interactiveTransition?.pushViewController = detail
+//        self.setKj_RightGesture(kj_rightGesture: false)
         
         let button1 = UIButton(type:.custom)
         button1.setTitle("全屏渐变", for: .normal)
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        self.navigationController?.delegate = interactiveTransition
+//        self.navigationController?.delegate = interactiveTransition
     }
 /*
      冒泡排序算法的运作如下：
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
+        self.navigationController?.pushViewController(DetailViewController(), animated: true)
     }
     
     

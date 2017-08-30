@@ -26,13 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabcontrol.tabBar.frame = CGRect.init(x: 0, y: SCREENH-49, width: SCREENW, height: 49)
         let homeControl = ViewController()
         homeControl.title = "首页"
-        let homeNav = UINavigationController.init(rootViewController: homeControl)
+        let homeNav = CustomNavigationController.init(rootViewController: homeControl)
         let secControl = SecViewController()
         secControl.title = "动画"
-        let secNav = UINavigationController.init(rootViewController: secControl)
+        let secNav = CustomNavigationController.init(rootViewController: secControl)
         let trdControl = TrdViewController()
         trdControl.title = "我的"
-        let trdNav = UINavigationController.init(rootViewController: trdControl)
+        let trdNav = CustomNavigationController.init(rootViewController: trdControl)
         
         tabcontrol.viewControllers = [homeNav,secNav,trdNav]
         tabcontrol.selectedIndex = 0

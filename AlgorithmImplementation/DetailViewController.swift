@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
 
     lazy var interactiveTransitionRecognizer: UIScreenEdgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer.init(target: self, action: #selector(DetailViewController.interactiveTransitionRecognizerAction(_:)))
     
@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         let btn = UIButton(type: .custom)
         btn.setTitle("dismiss", for: .normal)
@@ -28,17 +28,17 @@ class DetailViewController: UIViewController {
             make.height.equalTo(200)
         }
         
-        interactiveTransitionRecognizer.edges = .left
-        self.view.addGestureRecognizer(interactiveTransitionRecognizer)
-        
-        interactiveTransition = KJInteractivityTransition.init(gestureType: .pan, controlAnimationType: .Scale, viewController: self)
-        self.setKj_RightGesture(kj_rightGesture: false)
+//        interactiveTransitionRecognizer.edges = .left
+//        self.view.addGestureRecognizer(interactiveTransitionRecognizer)
+//        
+//        interactiveTransition = KJInteractivityTransition.init(gestureType: .pan, controlAnimationType: .Slider, viewController: self)
+//        self.setKj_RightGesture(kj_rightGesture: false)
         
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        self.navigationController?.delegate = interactiveTransition
+//        self.navigationController?.delegate = interactiveTransition
     }
     
     func dismissClick() {
